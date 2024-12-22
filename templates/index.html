@@ -3,37 +3,48 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
     <title>Image Resizing and Color Changing</title>
 </head>
 <body>
     <h1>Image Resizing and Color Changing App</h1>
 
+    <!-- Theme Toggle -->
+    <button id="theme-toggle" class="theme-toggle">Dark / Light</button>
+
     <!-- Upload Form -->
     <h2>Upload an Image</h2>
-    <form action="/upload" method="post" enctype="multipart/form-data">
-        <input type="file" name="image" required>
+    <form id="upload-form" action="/upload" method="post" enctype="multipart/form-data">
+        <input type="file" name="image" id="image-upload" required>
         <button type="submit">Upload</button>
+        <button type="button" id="clear-upload">Clear</button>
     </form>
+    <div id="image-preview"></div>
 
     {% if image_file %}
         <h2>Uploaded Image</h2>
-        <img src="{{ url_for('static', filename=image_file) }}" width="300" />
+        <img src="{{ url_for('static', filename=image_file) }}" id="uploaded-image" width="300" />
     {% endif %}
 
     <!-- Resize Form -->
     <h2>Resize Image</h2>
-    <form action="/resize" method="post">
+    <form id="resize-form" action="/resize" method="post">
         <input type="hidden" name="image_path" value="{{ image_file }}">
-        <label for="width">Width: </label><input type="number" name="width" required>
-        <label for="height">Height: </label><input type="number" name="height" required>
+        <label for="width">Width: </label><input type="number" name="width" id="width" required>
+        <label for="height">Height: </label><input type="number" name="height" id="height" required>
         <button type="submit">Resize</button>
+        <button type="button" id="clear-resize">Clear</button>
     </form>
 
     <!-- Grayscale Form -->
     <h2>Convert Image to Grayscale</h2>
-    <form action="/grayscale" method="post">
+    <form id="grayscale-form" action="/grayscale" method="post">
         <input type="hidden" name="image_path" value="{{ image_file }}">
         <button type="submit">Convert to Grayscale</button>
     </form>
+    <div class="moving-text-container">
+      <p class="moving-text">@ This Image Processing application is created by Rohan</p>    
+    </div>
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
 </body>
 </html>

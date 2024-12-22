@@ -1,0 +1,189 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+/* Body Styling */
+body {
+    background: linear-gradient(to bottom right, #f0f8ff, #e6e6fa);
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+/* Header */
+h1 {
+    color: #4a90e2;
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+h2 {
+    color: #333;
+    font-size: 1.8rem;
+    margin-top: 30px;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+/* Form Styling */
+form {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+    margin: 20px auto;
+}
+
+form label {
+    font-weight: bold;
+    margin-top: 10px;
+    display: block;
+}
+
+form input,
+form button {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+form button {
+    background-color: #4a90e2;
+    color: white;
+    font-size: 1rem;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+form button:hover {
+    background-color: #357ab8;
+}
+
+/* Image Display */
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    margin: 20px auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    h1 {
+        font-size: 2rem;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+
+    form {
+        padding: 15px;
+    }
+
+    form input,
+    form button {
+        font-size: 0.9rem;
+    }
+}
+/* Theme Toggle Button */
+.theme-toggle {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    background: #4a90e2;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.theme-toggle:hover {
+    background-color: #357ab8;
+}
+
+/* Image Preview */
+#image-preview {
+    margin-top: 20px;
+    text-align: center;
+}
+
+#image-preview img {
+    max-width: 100%;
+    max-height: 300px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+}
+
+/* Dark Theme */
+body.dark {
+    background: linear-gradient(to bottom right, #0e0e0e, #0d0d0e);
+    color: #ecf0f1;
+}
+
+body.dark button,
+body.dark input,
+body.dark select {
+    background: #69a3f0;
+    color: #ecf0f1;
+    border: 1px solid #ecf0f1;
+}
+body.dark form label {
+    color: #0c0c0c; /* Ensures text font color is white */
+}
+body.dark h2 {
+    color: #f7f2f2; /* Ensures text font color is white */
+}
+/* Styling the container for centering and appearance */
+.moving-text-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px; /* Adjust as per your layout */
+    overflow: hidden;
+    background: linear-gradient(90deg, #4CAF50, #81C784); /* Gradient background */
+    border-radius: 10px;
+    padding: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Styling the moving text */
+  .moving-text {
+    display: inline-block;
+    font-size: 24px;
+    font-weight: bold;
+    font-family: "Arial", sans-serif;
+    color: white;
+    text-transform: uppercase;
+    white-space: nowrap; /* Prevent wrapping */
+    animation: moveText 10s linear infinite;
+  }
+  
+  /* Animation keyframes */
+  @keyframes moveText {
+    0% {
+      transform: translateX(100%);
+    }
+    100% {
+      transform: translateX(-100%);
+    }
+  }
+  
